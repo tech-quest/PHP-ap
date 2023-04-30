@@ -24,7 +24,49 @@ $tweets = [
         'tweets' => '寿司を食べたい',
         'created_at' => '2022/10/25',
     ],
-]; ?>
+
+    [
+        'id' => 5,
+        'userName' => 'さとう',
+        'tweets' => 'ピザを食べたい',
+        'created_at' => '2022/10/26',
+
+    ],
+
+    [
+
+        'id' => 6,
+        'userName' => 'すずき',
+        'tweets' => '焼肉を食べたい',
+        'created_at' => '2022/10/27',
+
+
+    ],
+
+    [
+        'id' => 7,
+        'userName' => 'すずき',
+        'tweets' => '焼き鳥を食べたい',
+        'created_at' => '2022/10/28',
+
+    ],
+
+];
+
+$tweets = makeSatoList($tweets);
+
+
+function makeSatoList(array $tweets):array{
+    $satoList = [];
+    foreach ($tweets as $tweet){
+        if($tweet['userName'] == 'さとう'){
+            $satoList[] = $tweet;
+        }
+
+    }
+    return $satoList;
+}
+?>
 
 <!-- 以下はHTMLのコードになります -->
 <!-- 今は「こんな処理をしているんだな〜」とざっくり見ていただけたらと思います！ -->
@@ -73,5 +115,7 @@ $tweets = [
                 </li>
             <?php endforeach; ?>
         </ol>
+
+
     </body>
 </html>
